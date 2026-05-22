@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conserto, instalação e manutenção de fogões, aquecedores e ar condicionado em Curitiba e região. Atendimento rápido e garantido.">
-    <title>Aideal | Fogões, Aquecedores e Ar Condicionado - Curitiba</title>
+    <meta name="description" content="Conserto, instalação e manutenção de fogões, aquecedores e ar condicionado em Curitiba e região. Atendimento rápido com garantia.">
+    <title>Aideal | Conserto de Fogões, Aquecedores e Ar Condicionado Curitiba</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -28,7 +28,6 @@
         .nav-links a { margin: 0 18px; text-decoration: none; color: #333; font-weight: 600; }
         .whats-header { background: var(--green); color: white; padding: 12px 26px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 8px; }
 
-        /* HERO */
         .hero {
             background: linear-gradient(135deg, var(--blue), #001f5e);
             color: white;
@@ -40,6 +39,7 @@
         }
         .hero-content h1 { font-size: 46px; line-height: 1.15; margin-bottom: 20px; }
         .hero-content .highlight { color: var(--orange); }
+
         .btn {
             padding: 16px 32px;
             border-radius: 50px;
@@ -54,10 +54,9 @@
         .btn-whats { background: var(--green); color: white; }
         .btn-google { background: white; color: #333; border: 2px solid #4285f4; }
 
-        /* SERVICES */
-        .services { padding: 90px 20px; text-align: center; background: #f8f9fa; }
-        .services h2 { margin-bottom: 60px; color: var(--blue); font-size: 36px; }
-        .grid {
+        .services, .testimonials { padding: 90px 20px; text-align: center; }
+        .services { background: #f8f9fa; }
+        .grid, .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
@@ -69,30 +68,16 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: 0.4s;
         }
-        .card:hover { transform: translateY(-12px); }
         .card img { width: 100%; height: 200px; object-fit: cover; }
         .card-body { padding: 25px; }
 
-        /* TESTIMONIALS */
-        .testimonials {
-            padding: 90px 20px;
-            background: white;
-        }
-        .testimonials h2 { text-align: center; margin-bottom: 60px; color: var(--blue); font-size: 36px; }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
         .testimonial {
             background: #f8f9fa;
             padding: 30px;
             border-radius: 16px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: left;
         }
         .stars { color: #ffc107; font-size: 22px; margin-bottom: 15px; }
         .testimonial img {
@@ -104,7 +89,6 @@
             border: 3px solid var(--orange);
         }
 
-        /* INFO + CONTACT */
         .info-bar {
             background: var(--blue);
             color: white;
@@ -140,13 +124,6 @@
             color: white;
             box-shadow: 0 8px 25px rgba(37,211,102,0.5);
             z-index: 999;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
-            70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
-            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
 
         footer {
@@ -181,7 +158,7 @@
 <section class="hero">
     <div class="hero-content">
         <h1>Especialistas em <span class="highlight">Fogões, Aquecedores<br>e Ar Condicionado</span></h1>
-        <p style="font-size:22px;">Conserto • Instalação • Manutenção • Conversão de Gás<br>Atendimento rápido em Curitiba e Região com garantia.</p>
+        <p style="font-size:22px;">Conserto • Instalação • Manutenção • Conversão de Gás<br>Atendimento rápido e com garantia em Curitiba e região.</p>
         
         <div style="margin-top:30px;">
             <a href="https://wa.me/5541998940991" class="btn btn-whats" target="_blank">
@@ -192,7 +169,7 @@
             </a>
         </div>
     </div>
-    <img src="https://images.unsplash.com/photo-1581579185169-1f83c6e9dfb4" alt="Fogão profissional" style="max-width:520px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+    <img src="https://images.unsplash.com/photo-1581579185169-1f83c6e9dfb4" alt="Técnico consertando fogão" style="max-width:520px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
 </section>
 
 <!-- SERVICES -->
@@ -200,23 +177,23 @@
     <h2>Nossos Serviços</h2>
     <div class="grid">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c" alt="Fogão">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c" alt="Conserto de Fogão Curitiba">
             <div class="card-body"><i class="fas fa-wrench"></i><h3>Conserto de Fogões</h3></div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1581092160607-4c5a3e6b5b3f" alt="Aquecedor">
+            <img src="https://images.unsplash.com/photo-1581092160607-4c5a3e6b5b3f" alt="Aquecedor de Água">
             <div class="card-body"><i class="fas fa-fire"></i><h3>Aquecedores</h3></div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85ee64" alt="Ar Condicionado">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85ee64" alt="Ar Condicionado Split">
             <div class="card-body"><i class="fas fa-snowflake"></i><h3>Ar Condicionado</h3></div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1565183928294-7063f6e3c0e0" alt="Instalação">
+            <img src="https://images.unsplash.com/photo-1565183928294-7063f6e3c0e0" alt="Instalação de Fogão">
             <div class="card-body"><i class="fas fa-plug"></i><h3>Instalação</h3></div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1581093458791-9d4c4c5b0f0e" alt="Conversão">
+            <img src="https://images.unsplash.com/photo-1581093458791-9d4c4c5b0f0e" alt="Conversão de Gás">
             <div class="card-body"><i class="fas fa-exchange-alt"></i><h3>Conversão de Gás</h3></div>
         </div>
     </div>
@@ -224,35 +201,35 @@
 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
-    <h2>O que nossos clientes dizem</h2>
+    <h2>O que nossos clientes em Curitiba dizem</h2>
     <div class="testimonial-grid">
         <div class="testimonial">
             <div class="stars">★★★★★</div>
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Maria Silva">
-            <p>"O técnico chegou no mesmo dia e consertou meu fogão rapidamente. Muito profissional e honesto. Recomendo!"</p>
-            <strong>Maria Silva - Curitiba</strong>
+            <p>"Chamei a Aideal para conserto de fogão em Curitiba. O técnico chegou no mesmo dia e resolveu tudo com excelência!"</p>
+            <strong>Maria Silva - Curitiba, PR</strong>
         </div>
         <div class="testimonial">
             <div class="stars">★★★★★</div>
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Carlos Mendes">
-            <p>"Instalaram meu ar condicionado com perfeição. Limpeza excelente e explicaram tudo. Serviço de primeira!"</p>
-            <strong>Carlos Mendes - Pinhais</strong>
+            <p>"Instalação de ar condicionado perfeita em Pinhais. Profissionais pontuais e muito atenciosos."</p>
+            <strong>Carlos Mendes - Pinhais, PR</strong>
         </div>
         <div class="testimonial">
-            <div class="stars">★★★★☆</div>
+            <div class="stars">★★★★★</div>
             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" alt="Ana Beatriz">
-            <p>"Meu aquecedor parou no inverno. Atenderam rápido e o preço foi justo. Muito satisfeito com o serviço."</p>
-            <strong>Ana Beatriz - São José dos Pinhais</strong>
+            <p>"Meu aquecedor foi consertado rapidamente. Serviço honesto e de qualidade!"</p>
+            <strong>Ana Beatriz - São José dos Pinhais, PR</strong>
         </div>
     </div>
 </section>
 
 <!-- INFO BAR -->
 <section class="info-bar">
-    <div><strong>📍</strong> Curitiba e Região Metropolitana</div>
-    <div><strong>⚡</strong> Atendimento Rápido (mesmo dia)</div>
-    <div><strong>✅</strong> Garantia de Qualidade</div>
-    <div><strong>🔧</strong> Peças Originais</div>
+    <div><strong>📍</strong> Curitiba e Região</div>
+    <div><strong>⚡</strong> Atendimento Rápido</div>
+    <div><strong>✅</strong> Garantia nos Serviços</div>
+    <div><strong>🔧</strong> Peças de Qualidade</div>
 </section>
 
 <!-- CONTACT -->
@@ -275,8 +252,7 @@
 </a>
 
 <footer>
-    <p><strong>Aideal Fogões, Aquecedores e Ar Condicionado</strong> © 2026</p>
-    <p>Especialistas em reparos e instalações com qualidade e transparência em Curitiba e região.</p>
+    <p><strong>Aideal Fogões, Aquecedores e Ar Condicionado</strong> © 2026 - Curitiba e Região</p>
 </footer>
 
 </body>
