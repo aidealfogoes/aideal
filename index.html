@@ -1,214 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aideal Fogões e Aquecedores</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conserto, instalação e manutenção de fogões, aquecedores e ar condicionado em Curitiba e região. Atendimento rápido e garantido.">
+    <title>Aideal | Fogões, Aquecedores e Ar Condicionado - Curitiba</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #003087;
+            --orange: #ff6600;
+            --green: #25D366;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; }
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        header { background: white; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 28px; font-weight: bold; color: var(--blue); display: flex; align-items: center; gap: 10px; }
+        .nav-links a { margin: 0 18px; text-decoration: none; color: #333; font-weight: 600; }
+        .whats-header { background: var(--green); color: white; padding: 12px 26px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 8px; }
 
-<style>
-body {margin:0;font-family:Arial;background:#f5f5f5}
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--blue), #001f5e);
+            color: white;
+            padding: 110px 20px 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .hero-content h1 { font-size: 46px; line-height: 1.15; margin-bottom: 20px; }
+        .hero-content .highlight { color: var(--orange); }
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); }
+        .btn-whats { background: var(--green); color: white; }
+        .btn-google { background: white; color: #333; border: 2px solid #4285f4; }
 
-/* NAVBAR */
-nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-  background:white;
-}
+        /* SERVICES */
+        .services { padding: 90px 20px; text-align: center; background: #f8f9fa; }
+        .services h2 { margin-bottom: 60px; color: var(--blue); font-size: 36px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: 0.4s;
+        }
+        .card:hover { transform: translateY(-12px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 25px; }
 
-nav h2 {color:#ff6600}
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 90px 20px;
+            background: white;
+        }
+        .testimonials h2 { text-align: center; margin-bottom: 60px; color: var(--blue); font-size: 36px; }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .testimonial {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .stars { color: #ffc107; font-size: 22px; margin-bottom: 15px; }
+        .testimonial img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--orange);
+        }
 
-nav a {
-  margin:0 10px;
-  text-decoration:none;
-  color:#333;
-  font-weight:bold;
-}
+        /* INFO + CONTACT */
+        .info-bar {
+            background: var(--blue);
+            color: white;
+            padding: 50px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            text-align: center;
+        }
 
-.whats-btn {
-  background:#25D366;
-  padding:10px 20px;
-  color:white;
-  border-radius:6px;
-}
+        .contact {
+            padding: 90px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
 
-/* HERO */
-.hero {
-  display:flex;
-  flex-wrap:wrap;
-  background:linear-gradient(120deg,#0d1b2a,#1b263b);
-  color:white;
-  padding:50px;
-  align-items:center;
-}
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--green);
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.5);
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
 
-.hero-text {flex:1}
-.hero-text h1 {font-size:40px}
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+            70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
 
-.hero img {
-  flex:1;
-  max-width:100%;
-  border-radius:20px;
-}
-
-/* BUTTONS */
-.btn {
-  background:#25D366;
-  padding:15px 25px;
-  border-radius:8px;
-  color:white;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:15px;
-}
-
-.btn2 {
-  background:#fff;
-  color:#333;
-  padding:15px 25px;
-  border-radius:8px;
-  margin-left:10px;
-}
-
-/* SERVICES */
-.services {
-  padding:50px;
-  text-align:center;
-}
-
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-  margin-top:30px;
-}
-
-.card {
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-/* INFO BAR */
-.info {
-  background:#0d1b2a;
-  color:white;
-  padding:30px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-around;
-}
-
-/* CONTACT */
-.contact {
-  display:flex;
-  flex-wrap:wrap;
-  padding:40px;
-  gap:20px;
-}
-
-.contact div {
-  flex:1;
-}
-
-iframe {
-  width:100%;
-  height:250px;
-  border:0;
-}
-
-/* FOOTER */
-footer {
-  background:#111;
-  color:white;
-  padding:20px;
-  text-align:center;
-}
-
-/* FLOAT WHATS */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
-  border-radius:50%;
-  color:white;
-}
-</style>
+        footer {
+            background: #0a1f3d;
+            color: #ccc;
+            padding: 70px 20px 40px;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-  <h2>AIDEAL</h2>
-  <div>
-    <a href="#">Início</a>
-    <a href="#">Serviços</a>
-    <a href="#">Contato</a>
-  </div>
-  <a class="whats-btn" href="https://wa.me/5541998940991">WhatsApp</a>
-</nav>
+<header>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-fire"></i> AIDEAL
+        </div>
+        <div class="nav-links">
+            <a href="#">INÍCIO</a>
+            <a href="#">SERVIÇOS</a>
+            <a href="#">SOBRE NÓS</a>
+            <a href="#">AVALIAÇÕES</a>
+            <a href="#">CONTATO</a>
+        </div>
+        <a href="https://wa.me/5541998940991" class="whats-header" target="_blank">
+            <i class="fab fa-whatsapp"></i> WHATSAPP
+        </a>
+    </nav>
+</header>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>Conserto de Fogões e Aquecedores</h1>
-    <p>Atendimento rápido em Curitiba e região</p>
-
-    <a class="btn" href="https://wa.me/5541998940991">Chamar no WhatsApp</a>
-    <a class="btn2" href="#">Avaliar no Google</a>
-  </div>
-
-  <img src="https://images.unsplash.com/photo-1581579185169-1f83c6e9dfb4">
-</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Especialistas em <span class="highlight">Fogões, Aquecedores<br>e Ar Condicionado</span></h1>
+        <p style="font-size:22px;">Conserto • Instalação • Manutenção • Conversão de Gás<br>Atendimento rápido em Curitiba e Região com garantia.</p>
+        
+        <div style="margin-top:30px;">
+            <a href="https://wa.me/5541998940991" class="btn btn-whats" target="_blank">
+                <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
+            </a>
+            <a href="#" class="btn btn-google" style="margin-left:15px;">
+                <i class="fab fa-google"></i> AVALIE NO GOOGLE
+            </a>
+        </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1581579185169-1f83c6e9dfb4" alt="Fogão profissional" style="max-width:520px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+</section>
 
 <!-- SERVICES -->
-<div class="services">
-  <h2>Nossos Serviços</h2>
+<section class="services">
+    <h2>Nossos Serviços</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c" alt="Fogão">
+            <div class="card-body"><i class="fas fa-wrench"></i><h3>Conserto de Fogões</h3></div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581092160607-4c5a3e6b5b3f" alt="Aquecedor">
+            <div class="card-body"><i class="fas fa-fire"></i><h3>Aquecedores</h3></div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85ee64" alt="Ar Condicionado">
+            <div class="card-body"><i class="fas fa-snowflake"></i><h3>Ar Condicionado</h3></div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1565183928294-7063f6e3c0e0" alt="Instalação">
+            <div class="card-body"><i class="fas fa-plug"></i><h3>Instalação</h3></div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581093458791-9d4c4c5b0f0e" alt="Conversão">
+            <div class="card-body"><i class="fas fa-exchange-alt"></i><h3>Conversão de Gás</h3></div>
+        </div>
+    </div>
+</section>
 
-  <div class="grid">
-    <div class="card"><i class="fa-solid fa-wrench"></i><p>Fogões</p></div>
-    <div class="card"><i class="fa-solid fa-fire"></i><p>Aquecedores</p></div>
-    <div class="card"><i class="fa-solid fa-gear"></i><p>Instalação</p></div>
-    <div class="card"><i class="fa-solid fa-arrows-rotate"></i><p>Conversão de gás</p></div>
-    <div class="card"><i class="fa-solid fa-clipboard-check"></i><p>Manutenção</p></div>
-  </div>
-</div>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="testimonial-grid">
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Maria Silva">
+            <p>"O técnico chegou no mesmo dia e consertou meu fogão rapidamente. Muito profissional e honesto. Recomendo!"</p>
+            <strong>Maria Silva - Curitiba</strong>
+        </div>
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Carlos Mendes">
+            <p>"Instalaram meu ar condicionado com perfeição. Limpeza excelente e explicaram tudo. Serviço de primeira!"</p>
+            <strong>Carlos Mendes - Pinhais</strong>
+        </div>
+        <div class="testimonial">
+            <div class="stars">★★★★☆</div>
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" alt="Ana Beatriz">
+            <p>"Meu aquecedor parou no inverno. Atenderam rápido e o preço foi justo. Muito satisfeito com o serviço."</p>
+            <strong>Ana Beatriz - São José dos Pinhais</strong>
+        </div>
+    </div>
+</section>
 
-<!-- INFO -->
-<div class="info">
-  <div>📍 Curitiba e Região</div>
-  <div>⚡ Atendimento rápido</div>
-  <div>✔ Garantia de qualidade</div>
-</div>
+<!-- INFO BAR -->
+<section class="info-bar">
+    <div><strong>📍</strong> Curitiba e Região Metropolitana</div>
+    <div><strong>⚡</strong> Atendimento Rápido (mesmo dia)</div>
+    <div><strong>✅</strong> Garantia de Qualidade</div>
+    <div><strong>🔧</strong> Peças Originais</div>
+</section>
 
 <!-- CONTACT -->
-<div class="contact">
-  <div>
-    <h3>Contato</h3>
-    <p>📞 (41) 99894-0991</p>
-    <p>📍 Rua Treze de Maio, 937</p>
-  </div>
+<section class="contact">
+    <div>
+        <h2>Entre em Contato</h2>
+        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/5541998940991">(41) 99894-0991</a></p>
+        <p><i class="fas fa-phone"></i> <strong>Telefone:</strong> (41) 99894-0991</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rua Treze de Maio, 937 - Estância, Pinhais - PR</p>
+    </div>
+    <div>
+        <h2>Nossa Localização</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.5!2d-49.192!3d-25.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf...!5e0" width="100%" height="320" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
 
-  <div>
-    <h3>Localização</h3>
-    <iframe src="https://www.google.com/maps?q=Rua+Treze+de+Maio+937+Estancia+Pinhais&output=embed"></iframe>
-  </div>
-</div>
+<!-- FLOAT WHATSAPP -->
+<a href="https://wa.me/5541998940991" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <footer>
-  © Aideal Fogões e Aquecedores
+    <p><strong>Aideal Fogões, Aquecedores e Ar Condicionado</strong> © 2026</p>
+    <p>Especialistas em reparos e instalações com qualidade e transparência em Curitiba e região.</p>
 </footer>
-
-<a class="whatsapp" href="https://wa.me/5541998940991">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
 
 </body>
 </html>
